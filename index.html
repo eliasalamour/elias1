@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>برنامج التسبيح</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            direction: rtl;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        .tasbih {
+            margin: 20px 0;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            font-size: 24px;
+            color: #333;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>برنامج التسبيح</h1>
+        <div class="tasbih">
+            <h2>سبحان الله</h2>
+            <button onclick="increment('subhanallah')">تسبيح</button>
+            <p id="subhanallah-count">0</p>
+        </div>
+        <div class="tasbih">
+            <h2>الحمد لله</h2>
+            <button onclick="increment('alhamdulillah')">تسبيح</button>
+            <p id="alhamdulillah-count">0</p>
+        </div>
+        <div class="tasbih">
+            <h2>الله أكبر</h2>
+            <button onclick="increment('allahuakbar')">تسبيح</button>
+            <p id="allahuakbar-count">0</p>
+        </div>
+        <div class="tasbih">
+            <h2>لا إله إلا الله</h2>
+            <button onclick="increment('laailahaillallah')">تسبيح</button>
+            <p id="laailahaillallah-count">0</p>
+        </div>
+    </div>
+    <script>
+        function increment(tasbih) {
+            let count = document.getElementById(`${tasbih}-count`).innerText;
+            count = parseInt(count) + 1;
+            document.getElementById(`${tasbih}-count`).innerText = count;
+        }
+    </script>
+</body>
+</html>
